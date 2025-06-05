@@ -1,0 +1,12 @@
+
+[Plymouth Theme]
+Name=Bento Text
+Description=Text mode theme based on ubuntu-text theme
+ModuleName=ubuntu-text
+
+[ubuntu-text]
+title=Bento 24.04
+black=0x000000
+white=0xffffff
+brown=0xffb866
+blue=0x8cb1d9

@@ -1,0 +1,74 @@
+#!/bin/sh
+
+# start openbox-menu in the background
+openbox-menu -o menu.xml -p -g -x -t "x-terminal-emulator -e" applications.menu &
+
+## Polkit authentication agent 
+/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
+
+## Desktop environment
+export XDG_MENU_PREFIX=lxde-
+
+# Start programs automatically at the start of the session
+# (copy files from /usr/share/applications/ to your directory 
+#  ~/.config/autostart and modify them - ie : for firefox.desktop, remove "%u"
+# at the end of the "Exec=" line) 
+# xdg-autostart &
+
+# root desktop, test
+hsetroot -solid '000000'
+
+# Manage the desktop (with icons)
+pcmanfm --desktop &
+sleep 1
+
+# Other items we want to launch with the session
+# Panel 
+lxpanel &
+sleep 1
+
+# Another panel (you can choose)
+# tint2 &
+# sleep 1
+
+# Volume
+volumeicon &
+
+# Network
+nm-applet &
+# wicd-gtk -t &
+
+# Clipboard manager (lightweight)
+# clipit &
+
+# allow activating the numpad with the X session
+# numlockx &
+
+## Manage the desktop (without icons)
+
+# a random desktop background: there are two lines, uncomment ONE LINE ONLY !
+# tip : take the second one if you have several wallpapers and want a different
+# one at each session. Then deactivate the management of the desktop by "pcmanfm --desktop"
+
+# Or at your choice use one of the following command lines.
+
+# Tip: use the second line if you have several different backgrounds and you would 
+# want it to change randomly at each session. (If you add several backgrounds in the 
+# dedicated directory).
+
+# feh --bg-scale "$(find ~/.local/wallpapers -type f)" &
+#feh --bg-scale "$(find ~/.local/wallpapers -type f |sort -R |tail -1)" &
+
+# Xsnow. And now let is snow ! (With Santa Klaus, sledge... )
+# /usr/local/bin/xsnow.sh restore
+
+# nice transparency, fadings, shadows.
+/usr/local/bin/xcompmgr.sh restore
+
+# the screen will be off if inactive during 10 minutes
+#xset dpms 0 0 600 &
+
+# uncomment the next two lines only and screen stays on after default 10 minutes.
+# xset s off &
+# xset -dpms &
+

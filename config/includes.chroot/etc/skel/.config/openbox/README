@@ -1,0 +1,36 @@
+The files "menu.xml", "rc.xml" and "autostart" from "/etc/skel/.config/openbox" 
+provide a set of right-click menus on the desktop and on your panel(s) (it works
+with tint2, if the tint2rc configuration file has the right option setup for it,
+and not with lxpanel as it has it's own right-clic menu).
+
+The `oblocale.sh` script located in the scripts sub-directory allows you to
+switch the openbox menu from English to French or to German. Feel free to
+submit one or more translations for the *lang* directory!  
+
+The file menu.xml contains a line to start the program openbox-menu in
+persistant mode, for dynamic and fast regeneration of the applications menus,
+and an entry to use the obsession program to manage the shutdown/reboot etc.
+
+The file autostart allows starting programs while initiating the X session 
+(the Graphical mode).
+
+It is configured to start several ones and you can customize it, with the help
+of the comments.
+
+Some applications can make use of *.desktop files placed in the the
+`$HOME/.config/autostart` directory.
+
+Some do not play well with xdg-autostart, (desktop files in the autostart
+directory),  ie: the volumeicon program's desktop file, while some do.
+It's up to you to test if you want to. Usually, they work fine as it is.
+
+The rc.xml brings in some customized keyboard shortcuts for your Bento Openbox
+branded distribution, and you can add more shortcuts or tweak them later.
+
+If you install this set of configuration files and you do have Openbox
+configuration files of your own you might want to backup your
+`$HOME/.config/openbox`  original files before using this setup, incase you want
+to revert or merge your configurations later.
+
+The *scripts/xcompmgr.sh* and *scripts/xsnow.sh* files referred to in the
+autostart-* and menu.xml-* files are installed in `/usr/local/bin`.

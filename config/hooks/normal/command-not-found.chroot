@@ -1,0 +1,6 @@
+#!/bin/sh
+
+set -e
+
+# mise à jour de la base de donnée command-not-found
+update-command-not-found

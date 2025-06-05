@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Keyboard layout
+Name[fr]=Mappage clavier
+Description=Systuem wide configuration for the keyboard
+Description[fr]=Configuration du clavier pour tout le système
+Exec=sakura -e 'sudo dpkg-reconfigure keyboard-configuration'
+Categories=Settings;
+Terminal=false
+Encoding=UTF-8
+Icon=xterm-color_48x48

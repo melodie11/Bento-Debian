@@ -1,0 +1,31 @@
+Les fichiers "menu.xml", "rc.xml" et "autostart" du répertoire "/etc/skel/.config/openbox"
+ainsi que le fichier "scripts/xcompmgr.sh" et "scripts/xsnow.sh"$HOME/.config/autostart
+du répertoire "/etc/skel/.config/openbox" , fournissent un ensemble de
+menus contextuels (click-droit) pour Openbox sur le bureau et 
+le panel (fonctionne avec tint2, pourvu que la bonne option soit 
+configurée dans le fichier tint2rc, mais pas avec lxpanel qui a son propre 
+menu contextuel).
+
+Le fichier menu.xml contient une ligne pour démarrer le programme openbox-menu en mode persistant,
+ce qui permet d'avoir des menus applications dynamiques régénérés rapidement, ainsi qu'une entrée 
+pour utiliser obsession, afin de gérer l'extinction, le redémarrage, etc... 
+
+Le fichier autostart permet de démarrer des programmes au moment de la connexion à la session X 
+(le mode graphique). Il est configuré pour en démarrer plusieurs et vous pouvez le personnaliser, 
+en vous guidant sur les commentaires qui y sont portés. Maintenant certaines applications peuvent 
+être démarrée en même temps que le bureau en plaçant une copie de leur fichier *.desktop dans 
+le répertoire $HOME/.config/autostart.
+Certaines ne fonctionnent pas correctement avec xdg-autostart (les fichiers desktop 
+dans le répertoire autostart), par exemple, le fichier desktop du programme "volumeicon". 
+Ce sera à vous de tester au cas par cas.
+
+
+Le rc.xml apporte certains raccourcis clavier personnalisés dans votre 
+distribution Ubuntu Openbox Remix et vous pouvez y en ajouter ou en modifier plus tard.
+
+Si vous avez obtenu cet ensemble de configurations par une archive:
+Si vous n’utilisez pas déjà une version Ubuntu Openbox Remix, et que vous ayez 
+vos propres fichiers de configuration pour Openbox, vous pouvez faire 
+une sauvegarde de vos fichiers  $HOME/.config/openbox d'origine avant de copier 
+ces fichiers, dans le cas où vous voudriez plus tard fusionner les fichiers ou revenir 
+à la configuration d'origine.

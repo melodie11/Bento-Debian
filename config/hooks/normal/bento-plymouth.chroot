@@ -1,0 +1,15 @@
+#!/bin/sh
+
+set -e
+
+# plymouth bento logo
+update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/bento-logo/bento-logo.plymouth 120
+
+# plymouth bento text
+update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/bento-text/bento-text.plymouth 115
+
+# bento logo as default plymouth theme
+update-alternatives --set default.plymouth /usr/share/plymouth/themes/bento-logo/bento-logo.plymouth
+
+# apply changes
+update-initramfs -u

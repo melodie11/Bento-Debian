@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu xmlns="http://openbox.org/3.4/menu">
+	<menu execute=" cat ~/.cache/menu.xml" id="desktop-app" label="Applications"/>
+	<menu execute="sh ~/.config/openbox/scripts/oblocale.sh list" id="info-lang" label="Langue"/>
+	<menu id="openbox-menu" label="OpenBox">
+		<item label="ObConf">
+			<action name="Execute">
+				<command>obconf</command>
+			</action>
+		</item>
+		<item label="Recharger Openbox">
+			<action name="Reconfigure"/>
+		</item>
+	</menu>
+	<menu id="preferences" label="Préférences"> 
+		<item label="Préférences Bureau">
+			<action name="Execute">
+				<command>pcmanfm --desktop-pref</command>
+			</action>
+		</item>
+		<item label="Pas d'effets">
+			<action name="Execute">
+				<execute>
+						xcompmgr.sh unset
+					</execute>
+			</action>
+		</item>
+		<item label="Transparence">
+			<action name="Execute">
+				<execute>
+						xcompmgr.sh set
+					</execute>
+			</action>
+		</item>
+		<item label="Transparence, fondus">
+			<action name="Execute">
+				<execute>
+						xcompmgr.sh setshaded
+					</execute>
+			</action>
+		</item>
+		<item label="Transparence, fondus, ombres">
+			<action name="Execute">
+				<execute>
+						xcompmgr.sh setshadowshade
+					</execute>
+			</action>
+		</item>
+<!--		<item label="Xsnow marche">
+			<action name="Execute">
+				<execute>
+						xsnow.sh on
+					</execute>
+			</action>
+		</item>
+		<item label="Xsnow arrêt">
+			<action name="Execute">
+				<execute>
+						xsnow.sh off
+					</execute>
+			</action>
+		</item> -->
+		<!--<item label="Xsnow marche/arrêt">
+				<action name="Execute">
+					<execute>
+						xsnow.sh toggle
+					</execute>
+				</action>
+			</item> -->
+	</menu>
+	<menu id="root-menu" label="Openbox 3">
+		<separator label="Menu"/>
+		<menu id="desktop-app"/>
+		<separator/>
+		<item label="Navigateur web">
+			<action name="Execute">
+				<command>x-www-browser</command>
+			</action>
+		</item>
+		<item label="Gestionnaire de fichiers">
+			<action name="Execute">
+				<command>pcmanfm</command>
+			</action>
+		</item>
+		<item label="Terminal">
+			<action name="Execute">
+				<command>x-terminal-emulator</command>
+			</action>
+		</item>
+		<separator/>
+		<item icon="/usr/share/icons/hicolor/48x48/apps/synaptic.png" label="Synaptic">
+			<action name="Execute">
+				<execute>
+					pkexec synaptic
+				</execute>
+			</action>
+		</item>
+		<separator/>
+		<menu id="client-list-menu"/>
+		<menu id="openbox-menu"/>
+		<menu id="preferences"/>
+		<menu id="info-lang"/>
+		<separator/>
+		<item label="Quitter">
+			<action name="Execute">
+				<execute>obsession-logout</execute>
+			</action>
+		</item>
+	</menu>
+</openbox_menu>

@@ -1,0 +1,73 @@
+#!/bin/sh
+
+# startet openbox-menu im Hintergrund 
+openbox-menu -o menu.xml -p -g -x -t "x-terminal-emulator -e" applications.menu &
+
+## Polkit authentication agent 
+/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
+
+## Desktop Umgebung
+export XDG_MENU_PREFIX=lxde-
+
+# Startet programme Automatich beim Hochfaren des Betriebsystems 
+# (copiert Dateien von /usr/share/applications/ in ihre Persönliche Datei
+# ~/ .config/autostart und modifiziert sie -ie : fur firefox.desktop, remove "%u
+# am ende Der "exec=" Zeile )
+# xdg-autostart &
+
+# root Desktop, test
+hsetroot -solid '#000000'
+
+# Lasse pcmanfm den Hintergrund und die Desktop icone anzeigen
+pcmanfm --destkop &
+sleep 1
+
+# Andere Elemente, die wir mit der X- beginnen möchten X-session
+lxpanel &
+sleep 1
+
+# Eine Leiste (Panel) ist super, wähle eins.. (Muss installiert sein!)
+# tint2 &
+# sleep 1
+
+# volume management
+volumeicon &
+
+# Internet Verbindungen verwalten/konfigurieren
+nm-applet &
+# wicd-gtk -t &
+
+# Ermöglichen die Aktivierung des Ziffernblock mit der X-Session
+# numlockx &
+
+# Zwischenablage Manager
+# clipit &
+
+# Wechselnder Hintergrund, arbeitet mit den gleichen Befehl, von daher 
+# nur einen aktivieren entweder die erste für das wechseln der Bilder pro 
+# Sitzung, oder die zweite für Bewegung im Hintergrund.
+
+# a random desktop background: there are two lines, uncomment ONE LINE ONLY !
+# tip : take the second one if you have several wallpapers and want a different
+# one at each session. Then deactivate the management of the desktop by "pcmanfm --destkop"
+
+# feh --bg-scale "$(find ~/.local/wallpapers -type f)" &
+# feh --bg-scale "$(find ~/.local/wallpapers -type f |sort -R |tail -1)" &
+
+# Xsnow. Lass ess Schneien !
+# /usr/local/bin/xsnow.sh restore
+
+# xcompmgr ist ein Composite-Manager für den XServer, mit dem man echte 
+# Transparenz, Schatten, etc. erzeugen kann, ohne auf AIGLX oder Xgl 
+# zurückgreifen zu müssen. Außerdem kann man Fenster und Pop-Up Menüs 
+# à la Windows XP einblenden lassen.
+/usr/local/bin/xcompmgr.sh restore
+
+# der Bildschirm wird ausgeschaltet, wenn dieser innerhalb von 10 Minuten 
+# eine Inaktivität erkennt 
+# xset dpms 0 0 600 &
+
+# Aktivieren Sie die nächsten beiden Zeilen nur dann, wenn der Bildschirm 
+# anbleibt obwohl eine Vorgabe von 10 Minuten gegeben war.
+# xset s off &
+# xset -dpms &

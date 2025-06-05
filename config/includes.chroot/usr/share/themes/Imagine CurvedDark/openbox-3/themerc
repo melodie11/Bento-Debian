@@ -1,0 +1,121 @@
+#IMAGINE OPENBOX THEME STRUCTURE
+#by ishom jauhari (ishomj@gmail.com)
+#Theme name - Imagine CurvedDark
+#
+#Goal of IMAGINE THEMING is to produce openbox theme that
+#border looks thick, inactive looks behind active window
+#remove square impression button & in different colors, how can be?
+#button marks is designed based on box concept
+#
+#GENERAL PROPERTIES
+border.width: 1
+padding.height: 0
+padding.width: 4
+window.client.padding.height: 3
+window.client.padding.width: 3
+window.handle.width:0
+window.label.text.justify: Left
+#
+#USED AS ACTIVE WINDOW AREA (ALMOST IN UNIFORM COLOR)
+window.active.label.bg.shadow: 0
+window.active.label.bg.highlight: 48
+window.active.label.bg: Gradient SplitVertical Raised
+window.active.label.bg.color: #3C3B37
+window.active.label.bg.colorTo: #3C3B37
+window.active.label.bg.color.splitTo: #8CA08C
+window.active.title.separator.color: #3C3B37
+window.active.client.color: #3C3B37
+window.active.label.bg.border.color: #3A3935
+window.active.border.color: #587058
+window.active.label.text.color: #CCE0CC
+window.active.label.text.font: shadow=n
+#
+#USED AS BUTTON AREA ON ACTIVE WINDOW
+window.active.title.bg: Gradient SplitVertical Raised
+window.active.title.bg.color: #5A7B2C
+window.active.title.bg.colorTo: #5A7B2C
+window.active.title.bg.color.splitTo: #DEFFAF
+window.active.title.bg.colorTo.splitTo: #5A7B2C
+window.active.title.bg.shadow: 96
+window.active.title.bg.border.color: #BEBBCF
+#
+#BUTTON BEHAVIOUR ON ACTIVE WINDOW
+#---unpressed ---
+window.active.button.unpressed.bg: ParentRelative Flat
+window.active.button.unpressed.image.color: #404040
+window.active.button.toggled.unpressed.bg: ParentRelative Flat Border
+window.active.button.toggled.unpressed.bg.border.color: #89AA5A
+window.active.button.disabled.bg: ParentRelative Flat
+window.active.button.disabled.image.color: #698C33
+#---hover---
+window.active.button.hover.bg: ParentRelative Flat Border
+window.active.button.hover.image.color: #FFFFFF
+window.active.button.hover.bg.border.color: #D3FBD5
+window.active.button.toggled.hover.bg: ParentRelative Flat Border
+window.active.button.toggled.hover.image.color: #FFFFFF
+window.active.button.toggled.hover.bg.border.color: #D3FBD5
+#---pressed---
+window.active.button.pressed.bg: Solid Flat Border
+window.active.button.pressed.bg.color: #9CBD6D
+window.active.button.pressed.bg.border.color: #AFCA88
+#
+#USED AS INACTIVE WINDOW AREA (ALMOST IN UNIFORM COLOR)
+window.inactive.label.bg.shadow: 0
+window.inactive.label.bg.highlight: 93
+window.inactive.label.bg: Gradient SplitVertical Raised
+window.inactive.label.bg.color: #3C3B37
+window.inactive.label.bg.colorTo: #3C3B37
+window.inactive.label.bg.color.splitTo: #5A665A
+window.inactive.title.separator.color: #3C3B37
+window.inactive.client.color: #3C3B37
+window.inactive.label.bg.border.color: #3C3B37
+window.inactive.border.color: #385038
+window.inactive.label.text.color: #708870
+#
+#USED AS BUTTON AREA ON INACTIVE WINDOW
+window.inactive.title.bg: Gradient SplitVertical Raised
+window.inactive.title.bg.highlight: 32
+window.inactive.title.bg.color: #697B51
+window.inactive.title.bg.colorTo: #697B51
+window.inactive.title.bg.color.splitTo: #C2C9B7
+window.inactive.title.bg.colorTo.splitTo: #697B51
+window.inactive.title.bg.shadow: 96
+window.inactive.title.bg.border.color: #BEBBCF
+#
+#BUTTON BEHAVIOUR ON INACTIVE WINDOW
+#---unpressed---
+window.inactive.button.unpressed.bg: ParentRelative Flat
+window.inactive.button.unpressed.image.color: #545C54
+window.inactive.button.toggled.unpressed.bg: ParentRelative Flat Border
+window.inactive.button.toggled.unpressed.image.color: #A0A0A0
+window.inactive.button.toggled.unpressed.bg.border.color: #5A7B2C
+window.inactive.button.disabled.bg: ParentRelative Flat
+window.inactive.button.disabled.image.color: #61734B
+#---hover---
+window.inactive.button.hover.bg: ParentRelative None
+window.inactive.button.toggled.hover.bg: ParentRelative None
+#
+#MENU PROPERTIES
+menu.border.color: #002000
+menu.border.width: 0
+menu.title.bg: Gradient Vertical Flat
+menu.title.bg.color: #5E816E
+menu.title.bg.colorTo: #3E4B39
+menu.title.text.color: #FFFFFF
+menu.title.text.justify: center
+menu.items.bg: Gradient Vertical Flat Border
+menu.items.bg.color: #3E4B39
+menu.items.bg.colorTo: #000000
+menu.items.bg.border.color: #608060
+menu.items.disabled.text.color: #607060
+menu.items.text.color: #D3FBD5
+menu.separator.color: #407040
+menu.items.active.bg: Gradient SplitVertical Flat Border
+menu.items.active.bg.color: #5A7B2C
+menu.items.active.bg.colorTo: #5A7B2C
+menu.items.active.bg.color.splitTo: #C1E292
+menu.items.active.bg.colorTo.splitTo: #364E16
+menu.items.active.bg.border.color: #BFE8CC
+menu.items.active.text.color: #FFFFFF
+#
+#THANKS FOR USING

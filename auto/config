@@ -1,0 +1,30 @@
+#!/bin/sh
+
+lb config noauto \
+    --mode "debian" \
+    --system "live" \
+    --distribution "bookworm" \
+    --archive-areas "main contrib non-free non-free-firmware" \
+    --security "true" \
+    --updates "true" \
+    --backports "false" \
+    --binary-images "iso-hybrid" \
+    --bootloaders "syslinux grub-efi" \
+    --apt-indices "true" \
+    --apt-recommends "true" \
+    --apt-secure "true" \
+    --apt-source-archives "false" \
+    --linux-package "linux-image linux-headers" \
+    --debian-installer "live" \
+    --debian-installer-distribution "bookworm" \
+    --debian-installer-gui "true" \
+    --firmware-binary "true" \
+    --firmware-chroot "true" \
+    --iso-publisher "Projet Bento-Openbox; https://linuxvillage.org; contact@orditux.org" \
+    --memtest "none" \
+    --win32-loader "false" \
+    --clean \
+    --debug \
+    --verbose \
+    --source "false" \
+    "${@}"

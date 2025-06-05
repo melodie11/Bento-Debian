@@ -1,0 +1,8 @@
+Bento Openbox Debian
+====================
+
+2025-06-05
+----------
+- opening dedicated Bento Openbox Debian repository
+- import bento sources https://github.com/melodie11/Bento-Openbox
+- improve sources to build ISO with live-build

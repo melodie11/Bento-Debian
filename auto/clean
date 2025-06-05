@@ -1,0 +1,10 @@
+#!/bin/sh
+
+lb clean noauto "$@"
+rm -f config/binary config/bootstrap config/build \
+    config/chroot config/common config/source \
+    config/package-lists/live.list.chroot
+rm -Rf config/includes config/includes.bootstrap \
+  config/includes.source config/hooks/live
+find config/hooks/ -type l | xargs --no-run-if-empty rm -f
+rm  -f config/includes.chroot/usr/local/bin/openbox-menu

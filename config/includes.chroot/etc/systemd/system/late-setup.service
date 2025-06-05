@@ -1,0 +1,10 @@
+[Unit]
+Description=Configuration de post-install
+
+[Service]
+Type=oneshot
+RemainAfterExit=no
+ExecStart=/usr/share/dfiso/late-setup.sh
+
+[Install]
+WantedBy=multi-user.target

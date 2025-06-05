@@ -1,0 +1,99 @@
+#!/bin/bash
+# Bento Openbox live-build script
+
+# set working directory ------------------------------------------------
+BOXDIR="$(realpath "$(dirname "$0")")"
+cd ${BOXDIR}
+# cfg ------------------------------------------------------------------
+VERSION="$(date +%Y%m%d)"
+LOG="bento.log"
+if [ `whoami` != root ]; then
+    echo "erreur : lancer mkbento en tant qu'administrateur"
+    exit 1
+fi
+# args -----------------------------------------------------------------
+if [ "$1" == "32" ]; then ARCH="i386"
+elif [ "$1" == "64" ]; then ARCH="amd64"
+elif [ "$1" == "clean" ]; then lb clean && rm -R -f cache && exit 0
+else
+    # no args or wrong args > help
+    echo "Utilisation : en mode administrateur"
+    echo "./mkbento 32    > construire Bento Openbox i386"
+    echo "./mkbento 64    > construire Bento Openbox amd64"
+    echo "./mkbento clean > nettoyer le dossier de construction et le cache"
+    echo "---"
+    echo "prenez soin de nettoyer le cache avant de construire sous une nouvelle architecture."
+    exit 1
+fi
+
+## build ISO -----------------------------------------------------------
+
+# dep check
+if ! dpkg-query -W live-build &>"/dev/null"
+then
+    echo "ERREUR: live-build n'est pas installé"
+    exit 1
+fi
+
+# place nette
+lb clean
+
+# mise en place
+echo -e "----\nbuilding Bento-Openbox-${VERSION}-${ARCH}" > ${LOG}
+echo -e "$(date)" >> ${LOG}
+echo -e "system: $(uname -a)" >> ${LOG}
+echo -e "tools: live-build-$(lb -v) - Debian-$(cat /etc/debian_version)" >> ${LOG}
+echo -e "----\n" >> ${LOG}
+
+# copie openbox-menu
+cp ressources/openbox-menu"$1" config/includes.chroot/usr/local/bin/openbox-menu
+
+CONFIG=()
+# utiliser apt-cacher s'il est installé
+if dpkg-query -W apt-cacher-ng &>"/dev/null"
+then
+    export http_proxy="http://127.0.0.1:3142/"
+    CONFIG+=("--apt-http-proxy" "$http_proxy")
+else
+    echo "AVERTISSEMENT: apt-cacher-ng n'est pas installé"
+fi
+
+# architecture handling
+CONFIG+=("-a" "${ARCH}")
+case $ARCH in
+    i386)CONFIG+=("-k" "686");;
+esac
+
+# version into USB name
+CONFIG+=("--iso-application" "Bento-Openbox_$VERSION" "--iso-volume" "Bento-Openbox_$VERSION")
+
+# live-build time
+lb config ${CONFIG[@]}
+lb build
+
+## renommage
+if test -f live-image-${ARCH}.hybrid.iso; then
+    echo -e "----\nINFO: renommer"
+    ISODIR="${BOXDIR}/bento-openbox-${ARCH}"
+    NAME="bento-openbox-${VERSION}_${ARCH}"
+    mkdir -p ${ISODIR}
+    mv live-image-${ARCH}.hybrid.iso ${ISODIR}/${NAME}.iso
+    mv chroot.packages.install ${ISODIR}/${NAME}.pkgs
+    mv bento.log ${ISODIR}/${NAME}.log
+    echo -e "----\nINFO: calculate sha256sum"
+    cd ${ISODIR} && sha256sum ${NAME}.iso > ${NAME}.sha256
+    cd ${BOXDIR}
+    echo -e "----\nINFO: permissions"
+    find ${ISODIR} -name "*" -type f -exec chmod 644 {} \;
+    chown -R ${SUDO_USER}:${SUDO_USER} ${ISODIR}
+    echo -e "----\nINFO: nettoyage"
+    rm -f config/includes.chroot/usr/local/bin/openbox-menu
+    lb clean
+    echo "Opération achevée en $(($SECONDS/60)) minutes"
+    exit 0
+else
+    echo "ISO non construite : erreur, voir le fichier bento.log"
+    exit 1
+fi
+
+## eof

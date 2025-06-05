@@ -1,0 +1,19 @@
+// /etc/polkit-1/rules.d/60-synaptic-sudo-auth.rules
+// Cette règle permet aux membres du groupe 'sudo' de lancer Synaptic
+// en utilisant leur propre mot de passe, au lieu du mot de passe root.
+
+polkit.addRule(function(action, subject) {
+    // On cible l'action spécifique pour le lancement de Synaptic
+    if (action.id == "com.ubuntu.pkexec.synaptic") {
+        // On vérifie si l'utilisateur qui demande l'action est membre du groupe 'sudo'
+        if (subject.isInGroup("sudo")) {
+            // Si oui, on autorise l'action et on demande le mot de passe de l'utilisateur
+            // (AUTH_SELF signifie le mot de passe de l'utilisateur actuel)
+            return polkit.Result.AUTH_SELF;
+        }
+        // Si l'utilisateur n'est PAS dans le groupe 'sudo', la règle ne s'applique pas.
+        // PolicyKit continuera à chercher d'autres règles ou appliquera le comportement par défaut
+        // (qui est généralement de demander le mot de passe admin, comme défini dans le fichier .policy original).
+    }
+});
+

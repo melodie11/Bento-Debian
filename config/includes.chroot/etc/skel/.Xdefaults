@@ -1,0 +1,51 @@
+Xft.lcdfilter: lcddefault
+
+! ~/.Xdefaults
+!
+
+! Urxvt --------------------------------------------------------------------
+
+urxvt*depth: 32
+urxvt*background: rgba:0000/0000/0200/e700
+URxvt*geometry: 95x30
+urxvt.foreground: #ffffff
+urxvt.font: xft:Dejavu Sans Mono:pixelsize=14:antialias=true
+urxvt.modifier:alt
+urxvt.matcher.button: 1
+urxvt.perl-ext-common: default,matcher
+
+! Taille du buffer et barre de défilement
+URxvt*saveLines: 10000
+URxvt*scrollBar: true
+URxvt*scrollBar_right: true
+!URxvt*scrollColor: #c2dd5a
+URxvt*scrollColor: #7ba2d2
+URxvt*scrollBar_floating: true
+URxvt*scrollstyle: plain
+
+! Colors
+urxvt.color0: #000000
+urxvt.color1: #a40000
+urxvt.color2: #4a9a06
+urxvt.color3: #c4a000
+urxvt.color4: #204a87
+urxvt.color5: #5c3566
+urxvt.color6: #729fcf
+urxvt.color7: #eeeeec
+urxvt.color8: #000000
+urxvt.color9: #cc0000
+urxvt.color10: #73d216
+urxvt.color11: #edd409
+urxvt.color12: #3465a4
+urxvt.color13: #75507b
+urxvt.color14: #729fcf
+urxvt.color15: #ffffff
+
+! xterm  --------------------------------------------------------------------
+
+
+XTerm*background:   black
+XTerm*foreground:   white
+XTerm*cursorColor:  grey
+XTerm*faceName:     Monospace
+XTerm*faceSize:     12

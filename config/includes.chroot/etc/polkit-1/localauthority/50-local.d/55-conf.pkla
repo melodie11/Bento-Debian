@@ -1,0 +1,21 @@
+[Storage Permissions]
+Identity=unix-group:sudo
+Action=org.freedesktop.udisks2.filesystem-mount;org.freedesktop.udisks2.filesystem-mount-system;org.freedesktop.udisks2.eject-media;org.freedesktop.udisks2.eject-media-system;org.freedesktop.udisks2.filesystem-unmount-others;org.freedesktop.udisks2.eject-media-other-seat;org.freedesktop.udisks2.filesystem-mount-other-seat
+ResultAny=yes
+ResultActive=yes
+ResultInactive=no
+
+[Redemarrage kinik root]
+Identity=unix-group:sudo
+Action=org.freedesktop.login1.reboot;org.freedesktop.login1.power-off;org.freedesktop.login1.reboot-multiple-sessions;org.freedesktop.login1.power-off-multiple-sessions
+ResultAny=yes
+ResultActive=yes
+ResultInactive=no
+
+[UPower suspend hibernate]
+Identity=unix-group:sudo
+Action=org.freedesktop.login1.suspend;org.freedesktop.login1.hibernate
+ResultAny=yes
+ResultActive=yes
+ResultInactive=no
+

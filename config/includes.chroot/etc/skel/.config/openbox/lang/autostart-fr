@@ -1,0 +1,74 @@
+#!/bin/sh
+
+# lancer openbox-menu en tâche de fond
+openbox-menu -o menu.xml -p -g -x -k -t "x-terminal-emulator -e" applications.menu &
+
+## Agent d'authentification Polkit
+/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
+
+## Environnement du bureau
+export XDG_MENU_PREFIX=lxde-
+
+# Lancer automatiquement des programmes au démarrage de la session 
+# (copiez et modifiez des fichiers depuis /usr/share/applications/ 
+# vers votre répertoire ~/.config/autostart et modifiez-les - ex: pour 
+# firefox.desktop, ôter "%u") 
+# xdg-autostart &
+
+# root desktop, test
+hsetroot -solid '#000000'
+
+# Gestion du bureau (avec icônes)
+pcmanfm --desktop &
+sleep 1
+
+# Autres éléments que nous voulons lancer avec la session
+# Panel 
+lxpanel &
+sleep 1
+
+# Autre panel (au choix)
+# tint2 &
+# sleep 1
+
+# Gestion du volume
+volumeicon &
+
+# Gestion du réseau
+nm-applet &
+# wicd-gtk -t &
+
+# Presse-papier (gestionnaire léger)
+# clipit &
+
+# Permettre d'activer le pavé numérique avec la session graphique
+# numlockx &
+
+# Gestion du bureau (fond sans icônes)
+
+# un fond d'écran pris au hasard dans le dossier wallpapers. Decommentez une de
+# ces deux lignes : UNE SEULE ! Et désactivez la gestion du bureau par "pcmanfm --desktop" 
+
+# Ou encore utilisez l'une des lignes de commandes suivantes.
+
+# Astuce : utilisez la deuxième si vous avez plusieurs fonds différents et que vous
+# le vouliez qui change aléatoirement à chaque session. 
+# (Si vous placez plusieurs fonds d'écrans dans le dossier fait pour).
+
+# feh --bg-scale "$(find ~/.local/wallpapers -type f)" &
+# feh --bg-scale "$(find ~/.local/share/wallpapers -type f |sort -R |tail -1)" &
+
+# Xsnow. Faites tomber la neige ! (avec Père Noël, traîneau, rennes... )
+# /usr/local/bin/xsnow.sh restore
+
+# jolis fondus, transparence, et ombres.
+/usr/local/bin/xcompmgr.sh restore
+
+# the screen will be off if inactive during 10 minutes
+# on éteint l'écran après 10mn d'inactivité
+# xset dpms 0 0 600 &
+
+# décommentez les deux lignes suivantes seulement et l'écran restera 
+# allumé après les 10 minutes. 
+# xset s off &
+# xset -dpms &

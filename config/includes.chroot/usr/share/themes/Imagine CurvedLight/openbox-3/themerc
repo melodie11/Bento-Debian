@@ -1,0 +1,111 @@
+#IMAGINE OPENBOX THEME STRUCTURE
+#by ishom jauhari (ishomj@gmail.com)
+#Theme name - Imagine CurvedLight
+#
+#Goal of IMAGINE THEMING is to produce openbox theme that
+#border looks thick, inactive looks behind active window
+#remove square impression button & in different colors, how can be?
+#button marks is designed based on box concept
+#
+#GENERAL PROPERTIES
+border.width: 1
+padding.height: 0
+padding.width: 4
+window.client.padding.height: 3
+window.client.padding.width: 3
+window.handle.width:0
+window.label.text.justify: Left
+#
+#USED AS ACTIVE WINDOW AREA (ALMOST IN UNIFORM COLOR)
+window.active.label.bg.shadow: 0
+window.active.label.bg: Gradient SplitVertical Raised
+window.active.label.bg.color: #D0CFDD
+window.active.label.bg.colorTo: #C7C6D3
+window.active.label.bg.colorTo.splitTo: #C7C6D3
+window.active.title.separator.color: #C7C6D3
+window.active.client.color: #C7C6D3
+window.active.label.bg.border.color: #E1E1E7
+window.active.border.color: #29216A
+window.active.label.text.color: #000000
+window.active.label.text.font: shadow=n
+#
+#USED AS BUTTON AREA ON ACTIVE WINDOW
+window.active.title.bg: Gradient Vertical Flat
+window.active.title.bg.color: #FFEBEB
+window.active.title.bg.colorTo: #0000FF
+#
+#BUTTON BEHAVIOUR ON ACTIVE WINDOW
+#---unpressed ---
+window.active.button.unpressed.bg: ParentRelative Flat
+window.active.button.unpressed.image.color: #D6D8FF
+window.active.button.toggled.unpressed.bg: ParentRelative Flat Border
+window.active.button.toggled.unpressed.bg.border.color: #A296F3
+window.active.button.disabled.bg: ParentRelative Flat
+window.active.button.disabled.image.color: #A295BD
+#---hover---
+window.active.button.hover.bg: ParentRelative Flat Border
+window.active.button.hover.image.color: #FFFFFF
+window.active.button.hover.bg.border.color: #C7BEF1
+window.active.button.toggled.hover.bg: ParentRelative Flat Border
+window.active.button.toggled.hover.image.color: #FFFFFF
+window.active.button.toggled.hover.bg.border.color: #C7BEF1
+#---pressed---
+window.active.button.pressed.bg: Solid Flat Border
+window.active.button.pressed.bg.color: #9291A7
+window.active.button.pressed.bg.border.color: #BBACBD
+window.active.button.toggled.pressed.bg: Solid Flat Border
+window.active.button.toggled.pressed.bg.color: #9291A7
+window.active.button.toggled.pressed.bg.border.color: #BBACBD
+#
+#USED AS INACTIVE WINDOW AREA (ALMOST IN UNIFORM COLOR)
+window.inactive.label.bg.shadow: 0
+window.inactive.label.bg: Gradient Vertical Flat
+window.inactive.label.bg.color: #F5F5F7
+window.inactive.label.bg.colorTo: #C7C6D3
+window.inactive.title.separator.color: #C7C6D3
+window.inactive.client.color: #C7C6D3
+window.inactive.border.color: #8382A7
+window.inactive.label.text.color: #9E9E9E
+#
+#USED AS BUTTON AREA ON INACTIVE WINDOW
+window.inactive.title.bg: Gradient Vertical Flat
+window.inactive.title.bg.color: #F1F1F4
+window.inactive.title.bg.colorTo: #6F6FFF
+#
+#BUTTON BEHAVIOUR ON INACTIVE WINDOW
+#---unpressed---
+window.inactive.button.unpressed.bg: ParentRelative Flat
+window.inactive.button.unpressed.image.color: #8F8FBD
+window.inactive.button.toggled.unpressed.bg: ParentRelative Flat Border
+window.inactive.button.toggled.unpressed.image.color: #EAEAEA
+window.inactive.button.toggled.unpressed.bg.border.color: #A5A5FB
+window.inactive.button.disabled.bg: ParentRelative Flat
+window.inactive.button.disabled.image.color: #B5B5DE
+#---hover---
+window.inactive.button.hover.bg: ParentRelative None
+window.inactive.button.toggled.hover.bg: ParentRelative None
+#
+#MENU PROPERTIES
+menu.border.color: #827FA1
+menu.border.width: 0
+menu.title.bg: Gradient SplitVertical Flat
+menu.title.bg.color: #5F58F8
+menu.title.bg.colorTo: #1F1DFD
+menu.title.bg.color.splitTo: #EBD9ED
+menu.title.text.color: #FFFFFF
+menu.title.text.justify: center
+menu.items.bg: Gradient CrossDiagonal Flat Border
+menu.items.bg.color: #FFFFFF
+menu.items.bg.colorTo: #C7C6D3
+menu.items.bg.border.color: #A79AF2
+menu.items.disabled.text.color: #808080
+menu.items.text.color: #000002
+menu.separator.color: #C7C6D3
+menu.items.active.bg: Gradient SplitVertical Flat Border
+menu.items.active.bg.color: #4742FA
+menu.items.active.bg.colorTo: #4742FA
+menu.items.active.bg.color.splitTo: #D0C0FF
+menu.items.active.bg.border.color: #857FB3
+menu.items.active.text.color: #FFFFFF
+#
+#THANKS FOR USING

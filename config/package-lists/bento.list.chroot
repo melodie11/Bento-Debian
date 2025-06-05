@@ -1,0 +1,66 @@
+## bento packages ##
+
+#base
+task-french task-english task-german sudo lsb-release acpica-tools accountsservice
+user-setup bash bash-completion command-not-found
+
+#login
+lightdm lightdm-gtk-greeter-settings lightdm-autologin-greeter
+
+#desktop
+openbox obconf obsession tint2 lxpanel
+
+#filer
+mc pcmanfm
+
+#network
+hexchat firefox-esr firefox-esr-l10n-fr firefox-esr-l10n-de
+webext-ublock-origin-firefox webext-keepassxc-browser
+thunderbird thunderbird-l10n-fr thunderbird-l10n-de
+network-manager-gnome network-manager-openvpn-gnome
+curl wpasupplicant
+
+#office
+zathura zathura-pdf-poppler galculator
+cups-pdf system-config-printer geany gsimplecal
+fontconfig fontconfig-config fonts-dejavu fonts-dejavu-core fonts-dejavu-extra
+fonts-droid-fallback fonts-freefont-ttf fonts-liberation fonts-liberation2
+fonts-noto-mono fonts-noto-ui-core fonts-symbola
+
+#media
+mpv lame alsa-utils alsa-tools volumeicon-alsa
+gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly wireplumber
+pavucontrol sox mpg123 vorbis-tools flac wavpack
+
+#graphics
+feh gpicview
+
+#system
+sakura vrms synaptic gnome-system-tools dkms pkexec
+gparted gdisk dosfstools ntfs-3g mtools e2fsprogs smart-notifier
+debian-reference-fr debian-reference-de
+packagekit packagekit-tools plymouth
+policykit-1 policykit-1-gnome polkitd polkitd-pkla
+software-properties-common software-properties-gtk
+
+
+#tools
+catfish yad zip p7zip-full most baobab arandr xdotool eject hardinfo file-roller
+bluez bluez-firmware blueman lm-sensors
+
+#misc
+gvfs-fuse gvfs-backends x11-utils x11-apps numlockx laptop-detect ntp console-data
+
+#theme
+lxappearance lxappearance-obconf xcompmgr gtk-update-icon-cache
+gtk2-engines gtk2-engines-pixbuf gnome-brave-icon-theme gnome-themes-extra arc-theme
+adwaita-icon-theme dmz-cursor-theme xdg-user-dirs xdg-user-dirs-gtk xscreensaver
+
+#nonfree - note : la plupart des firmwares sont intégrés par défaut sur Debian 12
+firmware-linux firmware-linux-nonfree firmware-misc-nonfree
+
+#geek-apps
+whois nmap nethogs ncdu iotop mc haveged dnsutils pciutils usbutils neofetch inxi lshw kbd
+
+#live-installer
+calamares-settings-debian

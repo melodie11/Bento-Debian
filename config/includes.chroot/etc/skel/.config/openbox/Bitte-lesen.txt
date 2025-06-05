@@ -1,0 +1,33 @@
+Sie können sowohl die Dateien menu.xml, rc.xml und autostart.sh von 
+/usr/share/openbox-menu verwenden,
+als auch die Datei scripts/xcompmgr.sh von /usr/share/openbox-menu, 
+um zu einem Openbox-Menü zu kommen welches dynamische Rechts-Klick 
+Menüs auf dem Desktop und in Ihrer(n) Leiste(n) enthält (funktioniert 
+mit tint2, aber nicht mit lxpanel weil es sein eigenes Recht-Klick 
+Menü hat), und ein bisschen mehr:
+
+Die Datei menu.xml enthält auch Befehlszeilen welche dem Benutzer 
+das Ausschalten, Neustarten, Abmelden und Unterbrechen des System 
+ohne Root-Privilegien erlaubt;
+
+Die Datei autostart.sh ermöglicht das Starten von Programmen während 
+die X-Sitzung (der grafische Modus) initiiert wird. Sie ist so 
+konfiguriert, dass Sie auch mehrere Programme starten können, und 
+diese mit Hilfe der darin verfassen Kommentare personalisieren können.
+
+Die rc.xml bringt ein paar personalisierte Tastenkombinationen für 
+Ihre PCLinuxOS Distribution. Sie können weitere Tastenkürzel 
+hinzufügen oder diese zu einem späteren Zeitpunkt einstellen.
+
+Das Skript-Verzeichnis enthält ein Bash-Skript, welches von menu.xml 
+aufgerufen wird und es ermöglicht Ihnen die Verwendung oder das 
+Auszuschalten der xcompmgr Effekte im laufenden Betrieb aus dem 
+Openbox Menü heraus (sofern xcompmgr auf Ihrem System installiert ist).
+
+Dazu müssen Sie lediglich diese Dateien in Ihr home-Verzeichnis kopieren
+~/.config/openbox
+
+Wenn Sie nicht bereits eine PCLinuxOS Openbox-Version verwenden, 
+sollten Sie die Originaldateien von home config/Openbox vor dem 
+Kopieren dieser Dateien sichern, falls Sie sie später wiederherstellen 
+möchten.
