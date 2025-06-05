@@ -1,2 +1,2 @@
 # Bento-Debian
-Bento Openbox to be rebuilt for Debian with Live Buid
+Bento Openbox to be rebuilt for Debian using Live Buid
