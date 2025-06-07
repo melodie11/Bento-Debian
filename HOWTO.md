@@ -1,5 +1,5 @@
 # dépendances
-- live-build pour construire le live
+- live-build pour construire le live https://salsa.debian.org/live-team/live-build
 - apt-cacher-ng (pour éviter de télécharger les paquets à chaque construction)
 
 # principe de base
@@ -23,6 +23,8 @@ le dossier /config intègre les configuration pour la personnalisation :
 - includes.chroot : ce qui sera intégré dans le système live
 - includes.installer : ce qui sera intégré dans l'installeur
 - package-lists : la ou les listes des paquets à installer
+- ressources : les deux binaires pour openbox-menu qui seront copiés
+  dans config/includes.chroot/usr/local/bin pendant la construction
 
 # construction
 éditer le script /mkbento pour fixer la version, le nom etc
