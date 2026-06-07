@@ -16,7 +16,7 @@ export XDG_MENU_PREFIX=lxde-
 # xdg-autostart &
 
 # root desktop, test
-hsetroot -solid '000000'
+hsetroot -solid '#000000'
 
 # Manage the desktop (with icons)
 pcmanfm --desktop &
